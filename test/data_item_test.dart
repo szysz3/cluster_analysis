@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:k_means/data_item.dart';
+import 'package:k_means/model/data_item.dart';
 
 void main() {
   test('data item - copyWith method returns new object', () {

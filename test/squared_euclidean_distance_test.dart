@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:k_means/squared_euclidean_distance.dart';
+import 'package:k_means/distance/squared_euclidean_distance.dart';
 
 void main() {
   late final SquaredEuclideanDistance squaredEuclideanDistance;
