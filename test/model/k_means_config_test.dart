@@ -2,8 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:k_means/distance/squared_euclidean_distance.dart';
 import 'package:k_means/model/k_means_config.dart';
 
-import '../mocks.dart';
-import '../test_tools.dart';
+import '../tools/mocks.dart';
+import '../tools/test_tools.dart';
 
 void main() {
   test('config initialized with given data', () {
