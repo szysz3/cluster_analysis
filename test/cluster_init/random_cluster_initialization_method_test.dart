@@ -4,7 +4,7 @@ import 'package:k_means/cluster_init/random_cluster_initialization_method.dart';
 import '../test_tools.dart';
 
 void main() {
-  test('calculate distance - not equal length of parameters', () {
+  test('given cluster number initalized randomly ', () {
     //arrange
     final dataItems = generateDataItem(count: 10, dimension: 5);
     const clusterCount = 3;
@@ -14,7 +14,7 @@ void main() {
     final clusters =
         initMethod.initClusters(data: dataItems, clusterCount: clusterCount);
 
-    // assert
+    //assert
     expect(clusters.length == clusterCount, true);
     expect(
         clusters.map((cluster) => cluster.centroid).every((centroid) =>
