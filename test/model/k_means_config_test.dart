@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:k_means/cluster_init/cluster_initialization_method.dart';
 import 'package:k_means/distance/squared_euclidean_distance.dart';
 import 'package:k_means/model/k_means_config.dart';
 
@@ -12,18 +13,21 @@ void main() {
     const maxIterations = 10;
     const clusterCount = 3;
     final distanceMeasure = MockDistanceCalculator();
+    final initMethod = MockClusterInitializationMethod();
     //act
     final config = KMeansConfig(
         maxIterations: maxIterations,
         data: data,
         clusterCount: clusterCount,
-        distanceMeasure: distanceMeasure);
+        distanceMeasure: distanceMeasure,
+        initMethod: initMethod);
 
     //assert
     expect(config.maxIterations, maxIterations);
     expect(config.data, data);
     expect(config.clusterCount, clusterCount);
     expect(config.distanceMeasure, distanceMeasure);
+    expect(config.initMethod, initMethod);
   });
 
   test('config initialized with default data', () {
@@ -40,5 +44,6 @@ void main() {
     expect(config.data, data);
     expect(config.clusterCount, clusterCount);
     expect(config.distanceMeasure, isInstanceOf<SquaredEuclideanDistance>());
+    expect(config.initMethod, isInstanceOf<ClusterInitializationMethod>());
   });
 }
