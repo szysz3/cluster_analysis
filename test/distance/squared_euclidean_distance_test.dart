@@ -15,7 +15,7 @@ void main() {
     final data2 = [1, 2];
 
     //act & assert
-    expect(() => squaredEuclideanDistance.calculate(data1, data2),
+    expect(() => squaredEuclideanDistance.calculate(data1: data1, data2: data2),
         throwsArgumentError);
   });
 
@@ -25,7 +25,8 @@ void main() {
     final data2 = [2, 2];
 
     // act
-    final actual = squaredEuclideanDistance.calculate(data1, data2);
+    final actual =
+        squaredEuclideanDistance.calculate(data1: data1, data2: data2);
 
     //assert
     expect(actual, 2);
@@ -37,7 +38,8 @@ void main() {
     final data2 = [0, 0, 0, 0];
 
     // act
-    final actual = squaredEuclideanDistance.calculate(data1, data2);
+    final actual =
+        squaredEuclideanDistance.calculate(data1: data1, data2: data2);
 
     //assert
     expect(actual, 30);
@@ -49,7 +51,8 @@ void main() {
     final data2 = [0, 0];
 
     // act
-    final actual = squaredEuclideanDistance.calculate(data1, data2);
+    final actual =
+        squaredEuclideanDistance.calculate(data1: data1, data2: data2);
 
     //assert
     expect(actual, 0);

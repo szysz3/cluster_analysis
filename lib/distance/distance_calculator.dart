@@ -1,3 +1,3 @@
 abstract interface class DistanceCalculator<T extends num> {
-  T calculate(List<T> data1, List<T> data2);
+  T calculate({required List<T> data1, required List<T> data2});
 }

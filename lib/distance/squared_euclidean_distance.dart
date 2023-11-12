@@ -5,7 +5,7 @@ import 'package:k_means/distance/distance_calculator.dart';
 
 class SquaredEuclideanDistance implements DistanceCalculator {
   @override
-  num calculate(List<num> data1, List<num> data2) {
+  num calculate({required List<num> data1, required List<num> data2}) {
     if (data1.length != data2.length) {
       throw ArgumentError("Lengths are not equal.");
     }
