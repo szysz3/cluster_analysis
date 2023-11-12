@@ -20,7 +20,7 @@ class KMeans {
         .initClusters(data: config.data, clusterCount: config.clusterCount);
     _dataDimension = _clusters.first.centroid.length;
 
-    while (!stopConditionReached()) {
+    while (!_stopConditionReached()) {
       _assignDataToClusters();
       _recalculateCentroids();
     }
@@ -28,7 +28,7 @@ class KMeans {
     return _clusters;
   }
 
-  bool stopConditionReached() {
+  bool _stopConditionReached() {
     return config.maxIterations > _currentIterationCount;
   }
 
