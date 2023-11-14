@@ -1,12 +1,13 @@
 library k_means;
 
+import 'package:cluster_analysis/common/clustering_algorithm.dart';
 import 'package:collection/collection.dart';
 import 'package:cluster_analysis/k_means/model/centroid_average.dart';
 import 'package:cluster_analysis/k_means/model/cluster.dart';
 import 'package:cluster_analysis/k_means/model/k_means_config.dart';
 
 /// k-means clustering algorithm
-class KMeans {
+class KMeans implements ClusteringAlgorithm {
   final KMeansConfig config;
 
   late List<Cluster> _clusters;
@@ -15,6 +16,7 @@ class KMeans {
 
   KMeans({required this.config});
 
+  @override
   List<Cluster> clusterize() {
     _currentIterationCount = 0;
     _clusters = config.initMethod
