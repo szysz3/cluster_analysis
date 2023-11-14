@@ -13,6 +13,7 @@ class KMeans implements ClusteringAlgorithm {
   late List<Cluster> _clusters;
   late int _dataDimension;
   late int _currentIterationCount;
+  bool _clustersChanged = true;
 
   KMeans({required this.config});
 
@@ -32,16 +33,19 @@ class KMeans implements ClusteringAlgorithm {
   }
 
   bool _stopConditionReached() {
-    return config.maxIterations <= _currentIterationCount;
+    return !_clustersChanged || config.maxIterations <= _currentIterationCount;
   }
 
   void _assignDataToClusters() {
+    _clustersChanged = false;
     for (var dataItem in config.data) {
       var minDistance = double.maxFinite.toInt();
       _clusters.forEachIndexed((index, cluster) {
         var dataDistanceToClusterCentroid = config.similarityMeasure
             .calculate(data1: dataItem.values, data2: cluster.centroid);
         if (dataDistanceToClusterCentroid < minDistance) {
+          _clustersChanged = dataItem.clusterIndex != index;
+
           dataItem.clusterIndex = index;
           minDistance = dataDistanceToClusterCentroid.toInt();
         }
