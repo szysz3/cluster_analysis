@@ -37,8 +37,8 @@ class KMeans {
     for (var dataItem in config.data) {
       var minDistance = double.maxFinite.toInt();
       _clusters.forEachIndexed((index, cluster) {
-        var dataDistanceToClusterCentroid = config.distanceMeasure
-            .calculate(data1: dataItem.data, data2: cluster.centroid);
+        var dataDistanceToClusterCentroid = config.similarityMeasure
+            .calculate(data1: dataItem.values, data2: cluster.centroid);
         if (dataDistanceToClusterCentroid < minDistance) {
           dataItem.clusterIndex = index;
           minDistance = dataDistanceToClusterCentroid.toInt();
@@ -59,7 +59,7 @@ class KMeans {
       // so we are sure clusterIndex is NOT null
       // hence we can use '!' operator safely
       var centroidAverage = centroidList[dataItem.clusterIndex!];
-      dataItem.data.forEachIndexed((index, dataElement) {
+      dataItem.values.forEachIndexed((index, dataElement) {
         centroidAverage.sumOfDataItems[index] += dataElement;
       });
 

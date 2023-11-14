@@ -29,7 +29,7 @@ void main() {
 
     for (var dataItem in data) {
       expect(dataItem.clusterIndex != null, true);
-      print('-> data: ${dataItem.data}, cluster:  ${dataItem.clusterIndex}');
+      print('-> data: ${dataItem.values}, cluster:  ${dataItem.clusterIndex}');
     }
 
     print('clusters: ${clusters.join(' | ')}');

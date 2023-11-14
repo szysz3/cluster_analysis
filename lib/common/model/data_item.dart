@@ -1,11 +1,11 @@
 class DataItem {
-  List<num> data;
+  List<num> values;
   int? clusterIndex;
 
-  DataItem({required this.data, this.clusterIndex});
+  DataItem({required this.values, this.clusterIndex});
 
   @override
   String toString() {
-    return "[${data.join(',')}]";
+    return "[${values.join(',')}]";
   }
 }

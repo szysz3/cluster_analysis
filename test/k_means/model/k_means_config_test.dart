@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:cluster_analysis/k_means/cluster_init/cluster_initialization_method.dart';
-import 'package:cluster_analysis/k_means/distance/squared_euclidean_distance.dart';
+import 'package:cluster_analysis/common/similarity_measure/squared_euclidean_distance.dart';
 import 'package:cluster_analysis/k_means/model/k_means_config.dart';
 
 import '../tools/mocks.dart';
@@ -12,21 +12,21 @@ void main() {
     final data = generateDataItem(count: 3, dimension: 3);
     const maxIterations = 10;
     const clusterCount = 3;
-    final distanceMeasure = MockDistanceCalculator();
+    final similarityMeasure = MockSimilarityCalculator();
     final initMethod = MockClusterInitializationMethod();
     //act
     final config = KMeansConfig(
         maxIterations: maxIterations,
         data: data,
         clusterCount: clusterCount,
-        distanceMeasure: distanceMeasure,
+        similarityMeasure: similarityMeasure,
         initMethod: initMethod);
 
     //assert
     expect(config.maxIterations, maxIterations);
     expect(config.data, data);
     expect(config.clusterCount, clusterCount);
-    expect(config.distanceMeasure, distanceMeasure);
+    expect(config.similarityMeasure, similarityMeasure);
     expect(config.initMethod, initMethod);
   });
 
@@ -43,7 +43,7 @@ void main() {
     expect(config.maxIterations, maxIterations);
     expect(config.data, data);
     expect(config.clusterCount, clusterCount);
-    expect(config.distanceMeasure, isInstanceOf<SquaredEuclideanDistance>());
+    expect(config.similarityMeasure, isInstanceOf<SquaredEuclideanDistance>());
     expect(config.initMethod, isInstanceOf<ClusterInitializationMethod>());
   });
 }
