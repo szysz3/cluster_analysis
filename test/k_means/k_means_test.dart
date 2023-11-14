@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:cluster_analysis/common/model/data_item.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:cluster_analysis/k_means/k_means.dart';
 import 'package:cluster_analysis/k_means/model/k_means_config.dart';
@@ -7,14 +8,13 @@ import 'package:cluster_analysis/k_means/model/k_means_config.dart';
 import 'tools/test_tools.dart';
 
 void main() {
-  var maxIterationCount = 10;
-  var dataCount = 5;
+  var maxIterationCount = 50;
   var clusterCount = 2;
-  var dimensionCount = 2;
-  var data = generateDataItem(count: dataCount, dimension: dimensionCount);
 
-  test('data assigned to clusters', () {
+  test('every data item assigned to cluster', () {
     //arrange
+    var data = generateDataItem(count: 10, dimension: 5);
+
     var config = KMeansConfig.squaredEuclidean(
         maxIterations: maxIterationCount,
         data: data,
@@ -28,10 +28,36 @@ void main() {
     expect(clusters.length, clusterCount);
 
     for (var dataItem in data) {
-      expect(dataItem.clusterIndex != null, true);
-      print('-> data: ${dataItem.values}, cluster:  ${dataItem.clusterIndex}');
+      expect(dataItem.clusterIndex != null, isTrue);
     }
+  });
 
-    print('clusters: ${clusters.join(' | ')}');
+  test('data assigned to particular clusters', () {
+    //arrange
+    var data = [
+      DataItem(values: [0, 0]),
+      DataItem(values: [1, 1]),
+      DataItem(values: [100, 100]),
+      DataItem(values: [101, 101]),
+    ];
+
+    var config = KMeansConfig.squaredEuclidean(
+        maxIterations: maxIterationCount,
+        data: data,
+        clusterCount: clusterCount);
+    var kMeans = KMeans(config: config);
+
+    //act
+    var clusters = kMeans.clusterize();
+
+    //assert
+    expect(clusters.length, clusterCount);
+    var itemsInCluster = [0, 0];
+
+    for (var dataItem in data) {
+      itemsInCluster[dataItem.clusterIndex!] += 1;
+    }
+    expect(itemsInCluster[0] == 2, isTrue);
+    expect(itemsInCluster[1] == 2, isTrue);
   });
 }
