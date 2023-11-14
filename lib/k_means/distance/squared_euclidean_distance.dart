@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:collection/collection.dart';
-import 'package:k_means/distance/distance_calculator.dart';
+import 'package:cluster_analysis/k_means/distance/distance_calculator.dart';
 
 class SquaredEuclideanDistance implements DistanceCalculator {
   @override

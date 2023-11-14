@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:k_means/model/data_item.dart';
+import 'package:cluster_analysis/common/model/data_item.dart';
 
 List<DataItem> generateDataItem({required int count, required int dimension}) {
   var rand = Random();

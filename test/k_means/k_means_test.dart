@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:k_means/k_means.dart';
-import 'package:k_means/model/k_means_config.dart';
+import 'package:cluster_analysis/k_means/k_means.dart';
+import 'package:cluster_analysis/k_means/model/k_means_config.dart';
 
 import 'tools/test_tools.dart';
 

@@ -1,8 +1,8 @@
-import 'package:k_means/cluster_init/cluster_initialization_method.dart';
-import 'package:k_means/cluster_init/random_cluster_initialization_method.dart';
-import 'package:k_means/distance/distance_calculator.dart';
-import 'package:k_means/distance/squared_euclidean_distance.dart';
-import 'package:k_means/model/data_item.dart';
+import 'package:cluster_analysis/k_means/cluster_init/cluster_initialization_method.dart';
+import 'package:cluster_analysis/k_means/cluster_init/random_cluster_initialization_method.dart';
+import 'package:cluster_analysis/k_means/distance/distance_calculator.dart';
+import 'package:cluster_analysis/k_means/distance/squared_euclidean_distance.dart';
+import 'package:cluster_analysis/common/model/data_item.dart';
 
 class KMeansConfig {
   final int maxIterations;

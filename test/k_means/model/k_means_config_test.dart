@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:k_means/cluster_init/cluster_initialization_method.dart';
-import 'package:k_means/distance/squared_euclidean_distance.dart';
-import 'package:k_means/model/k_means_config.dart';
+import 'package:cluster_analysis/k_means/cluster_init/cluster_initialization_method.dart';
+import 'package:cluster_analysis/k_means/distance/squared_euclidean_distance.dart';
+import 'package:cluster_analysis/k_means/model/k_means_config.dart';
 
 import '../tools/mocks.dart';
 import '../tools/test_tools.dart';

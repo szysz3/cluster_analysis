@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:k_means/cluster_init/random_cluster_initialization_method.dart';
+import 'package:cluster_analysis/k_means/cluster_init/random_cluster_initialization_method.dart';
 
 import '../tools/test_tools.dart';
 
