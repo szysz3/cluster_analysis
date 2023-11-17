@@ -1,4 +1,4 @@
-import 'package:cluster_analysis/common/model/data_item.dart';
+import 'package:cluster_analysis/common/model/abstract_data_item.dart';
 
 class DataItem extends AbstractDataItem {
   bool? isNoise;

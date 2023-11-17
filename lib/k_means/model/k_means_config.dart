@@ -1,4 +1,4 @@
-import 'package:cluster_analysis/common/model/data_item.dart';
+import 'package:cluster_analysis/common/model/abstract_data_item.dart';
 import 'package:cluster_analysis/common/similarity_measure/similarity_measure.dart';
 import 'package:cluster_analysis/common/similarity_measure/squared_euclidean_distance.dart';
 import 'package:cluster_analysis/k_means/cluster_init/cluster_initialization_method.dart';

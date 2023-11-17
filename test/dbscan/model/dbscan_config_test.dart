@@ -1,8 +1,8 @@
 import 'package:cluster_analysis/dbscan/model/dbscan_config.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../tools/mocks.dart';
-import '../tools/test_tools.dart';
+import '../../tools/mocks.dart';
+import '../../tools/test_tools.dart';
 
 void main() {
   test('config initialized with given data', () {

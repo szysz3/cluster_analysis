@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 
-import 'package:cluster_analysis/common/model/data_item.dart';
+import 'package:cluster_analysis/common/model/abstract_data_item.dart';
 import 'package:cluster_analysis/k_means/k_means.dart';
 import 'package:cluster_analysis/k_means/model/k_means_config.dart';
 import 'package:flutter_test/flutter_test.dart';
