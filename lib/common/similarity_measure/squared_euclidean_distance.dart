@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:collection/collection.dart';
 import 'package:cluster_analysis/common/similarity_measure/similarity_measure.dart';
+import 'package:collection/collection.dart';
 
 class SquaredEuclideanDistance implements SimilarityMeasure {
   @override

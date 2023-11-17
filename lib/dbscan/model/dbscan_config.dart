@@ -1,4 +1,3 @@
-import 'package:cluster_analysis/common/model/data_item.dart';
 import 'package:cluster_analysis/common/similarity_measure/similarity_measure.dart';
 import 'package:cluster_analysis/dbscan/model/data_item.dart';
 

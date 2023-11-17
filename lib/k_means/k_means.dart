@@ -1,10 +1,8 @@
-library k_means;
-
 import 'package:cluster_analysis/common/clustering_algorithm.dart';
-import 'package:collection/collection.dart';
 import 'package:cluster_analysis/k_means/model/centroid_average.dart';
 import 'package:cluster_analysis/k_means/model/cluster.dart';
 import 'package:cluster_analysis/k_means/model/k_means_config.dart';
+import 'package:collection/collection.dart';
 
 /// k-means clustering algorithm
 class KMeans implements ClusteringAlgorithm {

@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
 
 import 'package:cluster_analysis/common/model/data_item.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:cluster_analysis/k_means/k_means.dart';
 import 'package:cluster_analysis/k_means/model/k_means_config.dart';
+import 'package:flutter_test/flutter_test.dart';
 
-import 'tools/test_tools.dart';
+import '../tools/test_tools.dart';
 
 void main() {
   var maxIterationCount = 50;
@@ -13,7 +13,7 @@ void main() {
 
   test('every data item assigned to cluster', () {
     //arrange
-    var data = generateDataItem(count: 10, dimension: 5);
+    var data = generateAbstractDataItem(count: 10, dimension: 5);
 
     var config = KMeansConfig.squaredEuclidean(
         maxIterations: maxIterationCount,
