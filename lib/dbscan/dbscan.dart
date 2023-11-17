@@ -55,8 +55,17 @@ class Dbscan implements ClusteringAlgorithm {
     }
   }
 
+  /// Naive approach - calculate distance to each element
   List<DataItem> _findNeighbours({required DataItem dataItem}) {
-    // TODO: implement
-    return List.empty();
+    var neighbourList = List<DataItem>.empty(growable: true);
+    for (var neighbour in config.data) {
+      var similarity = config.similarityMeasure
+          .calculate(data1: neighbour.values, data2: dataItem.values);
+      if (similarity <= config.eps && similarity > 0) {
+        neighbourList.add(neighbour);
+      }
+    }
+
+    return neighbourList;
   }
 }
