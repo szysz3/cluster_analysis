@@ -3,5 +3,5 @@ import 'package:cluster_analysis/common/model/data_item.dart';
 
 abstract interface class ClusterInitializationMethod {
   List<Cluster> initClusters(
-      {required List<DataItem> data, required int clusterCount});
+      {required List<AbstractDataItem> data, required int clusterCount});
 }

@@ -9,7 +9,7 @@ class RandomPartitionMethod implements ClusterInitializationMethod {
 
   @override
   List<Cluster> initClusters(
-      {required List<DataItem> data, required int clusterCount}) {
+      {required List<AbstractDataItem> data, required int clusterCount}) {
     final alreadyChosenIndexes = List<int>.empty(growable: true);
     return List.generate(clusterCount, (i) {
       return Cluster(

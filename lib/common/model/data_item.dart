@@ -1,8 +1,8 @@
-class DataItem {
+class AbstractDataItem {
   List<num> values;
   int? clusterIndex;
 
-  DataItem({required this.values, this.clusterIndex});
+  AbstractDataItem({required this.values, this.clusterIndex});
 
   @override
   String toString() {

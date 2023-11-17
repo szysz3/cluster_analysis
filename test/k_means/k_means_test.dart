@@ -35,10 +35,10 @@ void main() {
   test('data assigned to particular clusters', () {
     //arrange
     var data = [
-      DataItem(values: [0, 0]),
-      DataItem(values: [1, 1]),
-      DataItem(values: [100, 100]),
-      DataItem(values: [101, 101]),
+      AbstractDataItem(values: [0, 0]),
+      AbstractDataItem(values: [1, 1]),
+      AbstractDataItem(values: [100, 100]),
+      AbstractDataItem(values: [101, 101]),
     ];
 
     var config = KMeansConfig.squaredEuclidean(

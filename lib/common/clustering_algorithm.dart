@@ -1,5 +1,5 @@
-import 'package:cluster_analysis/k_means/model/cluster.dart';
+import 'package:cluster_analysis/common/model/abstract_cluster.dart';
 
 abstract interface class ClusteringAlgorithm {
-  List<Cluster> clusterize();
+  List<AbstractCluster> clusterize();
 }

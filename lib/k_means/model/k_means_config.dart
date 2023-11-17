@@ -6,7 +6,7 @@ import 'package:cluster_analysis/common/model/data_item.dart';
 
 class KMeansConfig {
   final int maxIterations;
-  final List<DataItem> data;
+  final List<AbstractDataItem> data;
   final int clusterCount;
   final SimilarityMeasure similarityMeasure;
   final ClusterInitializationMethod initMethod;
@@ -20,7 +20,7 @@ class KMeansConfig {
 
   KMeansConfig.squaredEuclidean({
     required int maxIterations,
-    required List<DataItem> data,
+    required List<AbstractDataItem> data,
     required int clusterCount,
   }) : this(
             maxIterations: maxIterations,
