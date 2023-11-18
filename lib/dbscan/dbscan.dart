@@ -7,26 +7,23 @@ import 'package:cluster_analysis/dbscan/model/dbscan_config.dart';
 class Dbscan implements ClusteringAlgorithm {
   final DbscanConfig config;
   final List<AbstractCluster> _clusters = List.empty(growable: true);
+  var _clusterIndex = 0;
 
   Dbscan({required this.config});
 
   @override
   List<AbstractCluster> clusterize() {
-    var clusterIndex = 0;
-    _clusters.add(AbstractCluster(label: clusterIndex.toString()));
+    _clusterIndex = 0;
 
     for (var dataItem in config.data) {
       if (dataItem.clusterIndex == null) {
-        if (_extendCluster(dataItem: dataItem, cluserIndex: clusterIndex)) {
-          clusterIndex++;
-          _clusters.add(AbstractCluster(label: clusterIndex.toString()));
-        }
+        if (_extendCluster(dataItem: dataItem)) {}
       }
     }
     return _clusters;
   }
 
-  bool _extendCluster({required DataItem dataItem, required int cluserIndex}) {
+  bool _extendCluster({required DataItem dataItem}) {
     List<DataItem> neighbours = _findNeighbours(dataItem: dataItem);
     if (neighbours.length < config.minPts) {
       // no enough neighbours, it means it is noise
@@ -34,8 +31,11 @@ class Dbscan implements ClusteringAlgorithm {
       dataItem.isNoise = true;
       return false;
     } else {
-      for (var neighbour in neighbours) {
-        neighbour.clusterIndex = cluserIndex;
+      _clusters.add(AbstractCluster(label: _clusterIndex.toString()));
+
+      for (var i = 0; i < neighbours.length; i++) {
+        var neighbour = neighbours[i];
+        neighbour.clusterIndex = _clusterIndex;
         neighbour.isNoise = false;
 
         var nextNeighbours = _findNeighbours(dataItem: neighbour);
@@ -45,12 +45,13 @@ class Dbscan implements ClusteringAlgorithm {
               neighbours.add(nextNeighbour);
             }
 
-            nextNeighbour.clusterIndex = cluserIndex;
+            nextNeighbour.clusterIndex = _clusterIndex;
             nextNeighbour.isNoise = false;
           }
         }
       }
 
+      _clusterIndex++;
       return true;
     }
   }
