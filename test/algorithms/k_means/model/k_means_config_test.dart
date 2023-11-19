@@ -1,10 +1,10 @@
 import 'package:cluster_analysis/common/similarity_measure/squared_euclidean_distance.dart';
-import 'package:cluster_analysis/k_means/cluster_init/cluster_initialization_method.dart';
-import 'package:cluster_analysis/k_means/model/k_means_config.dart';
+import 'package:cluster_analysis/algorithms/k_means/cluster_init/cluster_initialization_method.dart';
+import 'package:cluster_analysis/algorithms/k_means/model/k_means_config.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../tools/mocks.dart';
-import '../../tools/test_tools.dart';
+import '../../../tools/mocks.dart';
+import '../../../tools/test_tools.dart';
 
 void main() {
   test('config initialized with given data', () {

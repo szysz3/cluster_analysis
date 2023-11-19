@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:cluster_analysis/common/model/abstract_data_item.dart';
-import 'package:cluster_analysis/k_means/cluster_init/cluster_initialization_method.dart';
-import 'package:cluster_analysis/k_means/model/cluster.dart';
+import 'package:cluster_analysis/algorithms/k_means/cluster_init/cluster_initialization_method.dart';
+import 'package:cluster_analysis/algorithms/k_means/model/cluster.dart';
 
 class RandomPartitionMethod implements ClusterInitializationMethod {
   final _rand = Random();

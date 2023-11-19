@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
 
 import 'package:cluster_analysis/common/model/abstract_data_item.dart';
-import 'package:cluster_analysis/k_means/k_means.dart';
-import 'package:cluster_analysis/k_means/model/k_means_config.dart';
+import 'package:cluster_analysis/algorithms/k_means/k_means.dart';
+import 'package:cluster_analysis/algorithms/k_means/model/k_means_config.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../tools/test_tools.dart';
+import '../../tools/test_tools.dart';
 
 void main() {
   var maxIterationCount = 50;

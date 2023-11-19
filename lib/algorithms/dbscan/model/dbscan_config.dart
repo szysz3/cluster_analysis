@@ -1,6 +1,6 @@
 import 'package:cluster_analysis/common/similarity_measure/similarity_measure.dart';
 import 'package:cluster_analysis/common/similarity_measure/squared_euclidean_distance.dart';
-import 'package:cluster_analysis/dbscan/model/data_item.dart';
+import 'package:cluster_analysis/algorithms/dbscan/model/data_item.dart';
 
 class DbscanConfig {
   /// min. number of neighbours to determine whether point is considered

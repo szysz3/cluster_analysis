@@ -1,7 +1,7 @@
-import 'package:cluster_analysis/dbscan/model/data_item.dart';
+import 'package:cluster_analysis/algorithms/dbscan/model/data_item.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../tools/test_tools.dart';
+import '../../../tools/test_tools.dart';
 
 void main() {
   test('data item initialized with given data', () {

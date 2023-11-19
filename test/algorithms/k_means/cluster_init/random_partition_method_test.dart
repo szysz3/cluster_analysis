@@ -1,7 +1,7 @@
-import 'package:cluster_analysis/k_means/cluster_init/random_partition_method.dart';
+import 'package:cluster_analysis/algorithms/k_means/cluster_init/random_partition_method.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../tools/test_tools.dart';
+import '../../../tools/test_tools.dart';
 
 void main() {
   test('given cluster number initalized randomly', () {

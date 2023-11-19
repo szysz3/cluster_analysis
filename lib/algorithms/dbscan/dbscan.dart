@@ -1,7 +1,7 @@
 import 'package:cluster_analysis/common/clustering_algorithm.dart';
 import 'package:cluster_analysis/common/model/abstract_cluster.dart';
-import 'package:cluster_analysis/dbscan/model/data_item.dart';
-import 'package:cluster_analysis/dbscan/model/dbscan_config.dart';
+import 'package:cluster_analysis/algorithms/dbscan/model/data_item.dart';
+import 'package:cluster_analysis/algorithms/dbscan/model/dbscan_config.dart';
 
 /// DBSCAN (Density-Based Spatial Clustering of Application with Noise )
 class Dbscan implements ClusteringAlgorithm {
