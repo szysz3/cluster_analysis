@@ -1,4 +1,10 @@
+import 'dart:io';
+
 import 'package:cluster_analysis/algorithms/dbscan/model/data_item.dart';
+import 'package:cluster_analysis/algorithms/dbscan/model/dbscan_config.dart';
+import 'package:cluster_analysis/algorithms/dbscan/tools.dart';
+import 'package:cluster_analysis/cluster_analysis.dart';
+import 'package:cluster_analysis/data_processing/data_import.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../tools/test_tools.dart';
@@ -31,5 +37,29 @@ void main() {
     expect(dataItem.values, values);
     expect(dataItem.isNoise, isNull);
     expect(dataItem.clusterIndex, isNull);
+  });
+
+  test('iris data set assigned to 2 clusters', () async {
+    //arrange
+    final filePath = '${Directory.current.path}/test/file_resources/Iris.csv';
+    final irisAbstractDataItems = await DataImport().importFromCsvFile(
+        filePath: filePath, startColumnIndex: 1, endColumnIndex: 4);
+    final irisDataItems = irisAbstractDataItems
+        .map((abstractDataItem) => abstractDataItem.toDataItem())
+        .toList();
+
+    final dbscanConfig =
+        DbscanConfig.squaredEuclidean(minPts: 3, eps: 2, data: irisDataItems);
+    final dbscan = Dbscan(config: dbscanConfig);
+
+    //act
+    final clusters = dbscan.clusterize();
+
+    //assert
+    expect(clusters.length == 2, isTrue);
+    for (var dataItem in irisDataItems) {
+      expect(dataItem.clusterIndex, isNotNull);
+      expect(dataItem.isNoise, isFalse);
+    }
   });
 }
