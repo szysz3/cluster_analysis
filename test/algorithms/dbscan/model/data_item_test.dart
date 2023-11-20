@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:cluster_analysis/algorithms/dbscan/model/data_item.dart';
 import 'package:cluster_analysis/algorithms/dbscan/model/dbscan_config.dart';
 import 'package:cluster_analysis/algorithms/dbscan/tools.dart';
 import 'package:cluster_analysis/cluster_analysis.dart';
