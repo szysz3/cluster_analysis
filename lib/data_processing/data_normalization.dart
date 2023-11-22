@@ -41,8 +41,7 @@ class DataNormalization {
       var sumOfValuesMinusAverage = 0.0;
       for (var dataItem in dataItems) {
         var value = dataItem.values[axis];
-        sumOfValuesMinusAverage +=
-            pow(value - averageValuesList[dimensions], 2);
+        sumOfValuesMinusAverage += pow(value - averageValuesList[axis], 2.0);
       }
 
       squaredSumOfValuesMinusAverageList.add(sumOfValuesMinusAverage);
