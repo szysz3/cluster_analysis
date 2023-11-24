@@ -1,4 +1,4 @@
-![example workflow](https://github.com/github/docs/actions/workflows/dart.yml/badge.svg)
+![example workflow](https://github.com/szysz3/cluster_analysis/actions/workflows/dart.yml/badge.svg)
 
 
 ### Unit tests
