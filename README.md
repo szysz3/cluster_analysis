@@ -1,4 +1,5 @@
 ![example workflow](https://github.com/szysz3/cluster_analysis/actions/workflows/dart.yml/badge.svg)
+![example workflow](https://github.com/szysz3/cluster_analysis/actions/workflows/dart.yml/code-coverage-results.md)
 
 
 ### Unit tests
