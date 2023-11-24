@@ -1,3 +1,6 @@
+![example workflow](https://github.com/github/docs/actions/workflows/dart.yml/badge.svg)
+
+
 ### Unit tests
 
 Execute in main project dir (where pubpsec.yaml is located).
