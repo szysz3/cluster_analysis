@@ -43,7 +43,7 @@ void main() {
     expect(config.maxIterations, maxIterations);
     expect(config.data, data);
     expect(config.clusterCount, clusterCount);
-    expect(config.similarityMeasure, isInstanceOf<SquaredEuclideanDistance>());
-    expect(config.initMethod, isInstanceOf<ClusterInitializationMethod>());
+    expect(config.similarityMeasure, isA<SquaredEuclideanDistance>());
+    expect(config.initMethod, isA<ClusterInitializationMethod>());
   });
 }
