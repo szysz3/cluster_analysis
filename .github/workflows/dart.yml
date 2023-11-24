@@ -50,6 +50,6 @@ jobs:
       - name: Collect raw coverage reports
         run: dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info  --report-on=lib
 
-      - name: Convert to cobertura format:
+      - name: Convert to cobertura format
         run: dart pub global run cobertura convert -i coverage/lcov.info
 
