@@ -3,7 +3,7 @@
 import 'package:cluster_analysis/common/model/abstract_data_item.dart';
 import 'package:cluster_analysis/algorithms/k_means/k_means.dart';
 import 'package:cluster_analysis/algorithms/k_means/model/k_means_config.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 import '../../tools/test_tools.dart';
 

@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:cluster_analysis/data_processing/data_import.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('read data from csv file', () async {

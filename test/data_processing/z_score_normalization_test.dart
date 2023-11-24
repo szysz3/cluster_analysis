@@ -1,6 +1,6 @@
 import 'package:cluster_analysis/common/model/abstract_data_item.dart';
 import 'package:cluster_analysis/data_processing/z_score_normalization.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('standarize data with z-score', () async {

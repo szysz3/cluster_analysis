@@ -1,5 +1,5 @@
 import 'package:cluster_analysis/algorithms/dbscan/model/dbscan_config.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 import '../../../tools/mocks.dart';
 import '../../../tools/test_tools.dart';

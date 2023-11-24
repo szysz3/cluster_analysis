@@ -1,5 +1,5 @@
 import 'package:cluster_analysis/common/similarity_measure/squared_euclidean_distance.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 void main() {
   late final SquaredEuclideanDistance squaredEuclideanDistance;

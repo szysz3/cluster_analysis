@@ -2,7 +2,7 @@
 
 import 'package:cluster_analysis/cluster_analysis.dart';
 import 'package:cluster_analysis/algorithms/dbscan/model/dbscan_config.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('particular data items assigned to 2 clusters', () {
