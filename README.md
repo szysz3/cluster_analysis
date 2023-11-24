@@ -2,13 +2,25 @@
 
 Execute in main project dir (where pubpsec.yaml is located).
 
+#### Install coverage package:
+
+```
+dart pub global activate coverage
+```
+
 #### Run unit tests with coverage:
 
 ```
-flutter test --coverage . 
+dart run test --coverage="coverage"  
 ```
 
-#### Generate coverage report:
+#### Collect raw coverage reports:
+
+```
+dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info  --report-on=lib
+```
+
+#### Generate html coverage report:
 
 ```
 genhtml coverage/lcov.info -o coverage/html 
