@@ -3,7 +3,7 @@ import 'package:cluster_analysis/data_processing/principal_component_analysis.da
 import 'package:test/test.dart';
 
 void main() {
-  test('standarize data with z-score', () async {
+  test('test - in progress', () async {
     //arrange
     var data = List<AbstractDataItem>.of([
       AbstractDataItem(values: List.of([1, 1])),

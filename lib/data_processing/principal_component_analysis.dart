@@ -1,10 +1,9 @@
 import 'package:cluster_analysis/common/model/abstract_data_item.dart';
 import 'package:cluster_analysis/data_processing/tools.dart';
+import 'package:data/data.dart';
 
 class PrincipalComponentAnalysis {
   void calculate(List<AbstractDataItem> dataItems) {
-    // TODO:
-
     // Input: matrix with data items
     // Output: reduced mantrix with data items
 
@@ -28,6 +27,20 @@ class PrincipalComponentAnalysis {
     final covarianceMatrix = calculateCovarianceMatrix(dataMatrix);
 
     // 4. Calculate eigen vectors and values of covariance matrix
+    final eigen =
+        Matrix.fromRows(DataType.float64, covarianceMatrix).eigenvalue;
+    final eigenValues = eigen.realEigenvalues;
+    final eigenVectors = List.generate(eigen.V.rowCount, (_) {
+      return List.filled(eigen.V.colCount, 0.0);
+    });
+    eigen.V.forEach((row, col, value) {
+      eigenVectors[row][col] = value;
+    });
+
+    print('eigen vals: ${eigenValues.join(',')}');
+    for (var vec in eigenVectors) {
+      print('eigen vecs: ${vec.join(',')}');
+    }
 
     // 5. Rearrange eigen vectors and eigen values
     // 6. Choose principal components
