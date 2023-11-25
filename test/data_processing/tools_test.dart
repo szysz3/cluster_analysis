@@ -21,7 +21,7 @@ void main() {
     final expectedData2 = [50.00, 1250.00, 205.00];
     final expectedData3 = [34.75, 205.00, 110.00];
     //act
-    var result = covarianceMatrix(dataItems);
+    var result = calculateCovarianceMatrix(dataItems);
 
     //assert
     expect(result.length == 3, isTrue);

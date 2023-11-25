@@ -4,7 +4,7 @@ double calculateMeanValue(List<num> values) {
   return values.sum / values.length;
 }
 
-List<List<double>> covarianceMatrix(List<List<double>> data) {
+List<List<double>> calculateCovarianceMatrix(List<List<double>> data) {
   int rowCount = data.length;
   int colCount = data[0].length;
 

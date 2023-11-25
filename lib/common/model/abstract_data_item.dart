@@ -1,5 +1,5 @@
 class AbstractDataItem {
-  List<num> values;
+  List<double> values;
   int? clusterIndex;
 
   AbstractDataItem({required this.values, this.clusterIndex});

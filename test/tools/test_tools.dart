@@ -18,6 +18,6 @@ List<DataItem> generateDataItem({required int count, required int dimension}) {
   });
 }
 
-List<num> generateValues({required int dimension}) {
-  return List.generate(dimension, (_) => _rand.nextInt(100));
+List<double> generateValues({required int dimension}) {
+  return List.generate(dimension, (_) => _rand.nextDouble());
 }

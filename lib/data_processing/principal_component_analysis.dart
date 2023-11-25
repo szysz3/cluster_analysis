@@ -22,8 +22,13 @@ class PrincipalComponentAnalysis {
     }
 
     // 3. Calculate covariance matrix
+    final dataMatrix = dataItems.map((dataItem) {
+      return dataItem.values;
+    }).toList();
+    final covarianceMatrix = calculateCovarianceMatrix(dataMatrix);
 
     // 4. Calculate eigen vectors and values of covariance matrix
+
     // 5. Rearrange eigen vectors and eigen values
     // 6. Choose principal components
     // 7. Project data
