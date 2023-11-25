@@ -26,6 +26,10 @@ class PrincipalComponentAnalysis {
     }).toList();
     final covarianceMatrix = calculateCovarianceMatrix(dataMatrix);
 
+    for (var row in covarianceMatrix) {
+      print('covariance row: ${row.join(',')}');
+    }
+
     // 4. Calculate eigen vectors and values of covariance matrix
     final eigen =
         Matrix.fromRows(DataType.float64, covarianceMatrix).eigenvalue;
