@@ -7,10 +7,22 @@ Cluster analysis playground. Set of algorithms and tools implemented just for fu
 
 Execute in main project dir (where pubpsec.yaml is located).
 
-#### Install coverage package:
+#### Install dependencies:
+
+##### coverage:
 
 ```
 dart pub global activate coverage
+```
+
+##### lcov:
+
+```
+brew install lcov
+```
+or
+```
+apt-get install lcov
 ```
 
 #### Run unit tests with coverage:
