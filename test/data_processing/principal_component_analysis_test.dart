@@ -1,20 +1,37 @@
-import 'package:cluster_analysis/common/model/abstract_data_item.dart';
+import 'dart:io';
+
+import 'package:cluster_analysis/data_processing/data_import.dart';
 import 'package:cluster_analysis/data_processing/principal_component_analysis.dart';
+import 'package:collection/collection.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('test - in progress', () async {
+  test('reduce iris data set dimensionality', () async {
     //arrange
-    var data = List<AbstractDataItem>.of([
-      AbstractDataItem(values: List.of([1, 1])),
-      AbstractDataItem(values: List.of([3, 3])),
-      AbstractDataItem(values: List.of([10, 55])),
-    ]);
+    var filePath = '${Directory.current.path}/test/file_resources/Iris.csv';
+    var reducedFilePath =
+        '${Directory.current.path}/test/file_resources/Iris_reduced.txt';
+    var dataImport = DataImport();
+
+    var dataItems = await dataImport.importFromCsvFile(
+        filePath: filePath, startColumnIndex: 1, endColumnIndex: 4);
+
+    var expectedDataItems = await dataImport.importFromCsvFile(
+        filePath: reducedFilePath, startColumnIndex: 0, endColumnIndex: 1);
 
     // act
     var pca = PrincipalComponentAnalysis();
-    pca.calculate(data);
+    pca.reduceDimensionality(dataItems);
 
     // assert
+    dataItems.forEachIndexed((dataItemIndex, dataItem) {
+      dataItem.values.forEachIndexed((valueIndex, value) {
+        expect(
+            value.toStringAsPrecision(5),
+            expectedDataItems[dataItemIndex]
+                .values[valueIndex]
+                .toStringAsPrecision(5));
+      });
+    });
   });
 }
