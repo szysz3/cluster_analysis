@@ -19,4 +19,17 @@ void main() {
       expect(dataItem.values.isNotEmpty, isTrue);
     }
   });
+
+  test('read data throws exception', () async {
+    //arrange
+    var filePath =
+        '${Directory.current.path}/test/file_resources/not_existing_file.csv';
+    var dataImport = DataImport();
+
+    //act & assert
+    expect(
+        () => dataImport.importFromCsvFile(
+            filePath: filePath, startColumnIndex: 1, endColumnIndex: 4),
+        throwsException);
+  });
 }

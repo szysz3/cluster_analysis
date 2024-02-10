@@ -1,9 +1,3 @@
-import 'package:collection/collection.dart';
-
-double calculateMeanValue(List<num> values) {
-  return values.sum / values.length;
-}
-
 List<List<double>> calculateCovarianceMatrix(List<List<double>> data) {
   final rowCount = data.length;
   final colCount = data[0].length;
