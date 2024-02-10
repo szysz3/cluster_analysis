@@ -1,9 +1,4 @@
-import 'dart:io';
-
-import 'package:cluster_analysis/algorithms/dbscan/model/dbscan_config.dart';
-import 'package:cluster_analysis/algorithms/dbscan/tools.dart';
 import 'package:cluster_analysis/cluster_analysis.dart';
-import 'package:cluster_analysis/data_processing/data_import.dart';
 import 'package:test/test.dart';
 
 import '../../../tools/test_tools.dart';
