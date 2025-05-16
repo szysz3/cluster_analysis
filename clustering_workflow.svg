@@ -1,0 +1,60 @@
+<svg viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="550" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="450" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Cluster Analysis Workflow</text>
+  
+  <!-- Data Import Stage -->
+  <rect x="350" y="80" width="200" height="80" rx="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" />
+  <text x="450" y="115" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Data Import</text>
+  <text x="450" y="140" font-family="Arial" font-size="12" text-anchor="middle">DataImport.importFromCsvFile()</text>
+  
+  <!-- Data Processing Stage -->
+  <rect x="50" y="200" width="800" height="150" rx="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" />
+  <text x="450" y="225" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Data Processing</text>
+  
+  <!-- Data Processing Components -->
+  <rect x="80" y="250" width="200" height="70" rx="8" fill="#c8e6c9" stroke="#4caf50" stroke-width="1.5" />
+  <text x="180" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Z-Score Normalization</text>
+  <text x="180" y="300" font-family="Arial" font-size="12" text-anchor="middle">ZScoreNormalization.calculate()</text>
+  
+  <rect x="350" y="250" width="200" height="70" rx="8" fill="#c8e6c9" stroke="#4caf50" stroke-width="1.5" />
+  <text x="450" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">PCA</text>
+  <text x="450" y="300" font-family="Arial" font-size="12" text-anchor="middle">PrincipalComponentAnalysis</text>
+  
+  <rect x="620" y="250" width="200" height="70" rx="8" fill="#c8e6c9" stroke="#4caf50" stroke-width="1.5" />
+  <text x="720" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Other Processing</text>
+  <text x="720" y="300" font-family="Arial" font-size="12" text-anchor="middle">Covariance Matrix, etc.</text>
+  
+  <!-- Clustering Algorithms Stage -->
+  <rect x="50" y="390" width="800" height="150" rx="10" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" />
+  <text x="450" y="415" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Clustering Algorithms</text>
+  
+  <!-- Clustering Algorithm Components -->
+  <rect x="80" y="440" width="350" height="70" rx="8" fill="#e1bee7" stroke="#9c27b0" stroke-width="1.5" />
+  <text x="255" y="470" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">K-Means</text>
+  <text x="255" y="490" font-family="Arial" font-size="12" text-anchor="middle">KMeans.clusterize(), RandomPartitionMethod</text>
+  
+  <rect x="470" y="440" width="350" height="70" rx="8" fill="#e1bee7" stroke="#9c27b0" stroke-width="1.5" />
+  <text x="645" y="470" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">DBSCAN</text>
+  <text x="645" y="490" font-family="Arial" font-size="12" text-anchor="middle">Dbscan.clusterize(), _extendCluster(), _findNeighbours()</text>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555" />
+    </marker>
+  </defs>
+  
+  <!-- Data Import to Data Processing -->
+  <line x1="450" y1="160" x2="450" y2="200" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Data Processing to Clustering -->
+  <line x1="450" y1="350" x2="450" y2="390" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Data Flow Labels -->
+  <text x="470" y="180" font-family="Arial" font-size="12" font-style="italic">AbstractDataItem(s)</text>
+  <text x="470" y="375" font-family="Arial" font-size="12" font-style="italic">Processed Data</text>
+  <text x="450" y="530" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Clusters</text>
+</svg>
