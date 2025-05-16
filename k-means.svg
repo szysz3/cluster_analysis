@@ -1,0 +1,93 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" rx="15" ry="15" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">K-Means Clustering Visualization</text>
+  
+  <!-- Graph area -->
+  <rect x="50" y="70" width="700" height="350" fill="white" stroke="#ddd" stroke-width="1" rx="5" ry="5" />
+  
+  <!-- Axes -->
+  <line x1="100" y1="370" x2="700" y2="370" stroke="#666" stroke-width="2" />
+  <line x1="100" y1="70" x2="100" y2="370" stroke="#666" stroke-width="2" />
+  
+  <!-- Axis labels -->
+  <text x="400" y="395" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">X axis</text>
+  <g transform="translate(70, 220) rotate(-90)">
+    <text font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Y axis</text>
+  </g>
+  
+  <!-- Cluster 1 (red) -->
+  <circle cx="200" cy="160" r="12" fill="#ff6666" stroke="#333" stroke-width="1" />
+  <circle cx="230" cy="180" r="12" fill="#ff6666" stroke="#333" stroke-width="1" />
+  <circle cx="210" cy="210" r="12" fill="#ff6666" stroke="#333" stroke-width="1" />
+  <circle cx="170" cy="200" r="12" fill="#ff6666" stroke="#333" stroke-width="1" />
+  <circle cx="190" cy="170" r="12" fill="#ff6666" stroke="#333" stroke-width="1" />
+  
+  <!-- Cluster 2 (blue) -->
+  <circle cx="550" cy="180" r="12" fill="#6666ff" stroke="#333" stroke-width="1" />
+  <circle cx="580" cy="200" r="12" fill="#6666ff" stroke="#333" stroke-width="1" />
+  <circle cx="540" cy="220" r="12" fill="#6666ff" stroke="#333" stroke-width="1" />
+  <circle cx="590" cy="240" r="12" fill="#6666ff" stroke="#333" stroke-width="1" />
+  <circle cx="560" cy="190" r="12" fill="#6666ff" stroke="#333" stroke-width="1" />
+  
+  <!-- Cluster 3 (green) -->
+  <circle cx="350" cy="300" r="12" fill="#66cc66" stroke="#333" stroke-width="1" />
+  <circle cx="380" cy="280" r="12" fill="#66cc66" stroke="#333" stroke-width="1" />
+  <circle cx="320" cy="290" r="12" fill="#66cc66" stroke="#333" stroke-width="1" />
+  <circle cx="360" cy="320" r="12" fill="#66cc66" stroke="#333" stroke-width="1" />
+  <circle cx="340" cy="270" r="12" fill="#66cc66" stroke="#333" stroke-width="1" />
+  
+  <!-- Centroids -->
+  <g>
+    <!-- Centroid for cluster 1 -->
+    <circle cx="200" cy="180" r="15" fill="#ff6666" fill-opacity="0.4" stroke="#ff0000" stroke-width="2" />
+    <circle cx="200" cy="180" r="3" fill="#000" />
+    
+    <!-- Centroid for cluster 2 -->
+    <circle cx="560" cy="210" r="15" fill="#6666ff" fill-opacity="0.4" stroke="#0000ff" stroke-width="2" />
+    <circle cx="560" cy="210" r="3" fill="#000" />
+    
+    <!-- Centroid for cluster 3 -->
+    <circle cx="350" cy="290" r="15" fill="#66cc66" fill-opacity="0.4" stroke="#00aa00" stroke-width="2" />
+    <circle cx="350" cy="290" r="3" fill="#000" />
+  </g>
+  
+  <!-- Iterations illustration -->
+  <g>
+    <line x1="230" y1="180" x2="200" y2="180" stroke="#ff0000" stroke-width="1" stroke-dasharray="5,5" />
+    <line x1="540" y1="220" x2="560" y2="210" stroke="#0000ff" stroke-width="1" stroke-dasharray="5,5" />
+    <line x1="320" y1="290" x2="350" y2="290" stroke="#00aa00" stroke-width="1" stroke-dasharray="5,5" />
+  </g>
+  
+  <!-- Legend -->
+  <rect x="550" y="90" width="180" height="120" fill="white" stroke="#ddd" stroke-width="1" rx="5" ry="5" />
+  <text x="640" y="110" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Legend</text>
+  
+  <!-- Cluster 1 legend -->
+  <circle cx="570" cy="130" r="8" fill="#ff6666" stroke="#333" stroke-width="1" />
+  <text x="600" y="134" font-family="Arial, sans-serif" font-size="12">Cluster 1</text>
+  
+  <!-- Cluster 2 legend -->
+  <circle cx="570" cy="155" r="8" fill="#6666ff" stroke="#333" stroke-width="1" />
+  <text x="600" y="159" font-family="Arial, sans-serif" font-size="12">Cluster 2</text>
+  
+  <!-- Cluster 3 legend -->
+  <circle cx="570" cy="180" r="8" fill="#66cc66" stroke="#333" stroke-width="1" />
+  <text x="600" y="184" font-family="Arial, sans-serif" font-size="12">Cluster 3</text>
+  
+  <!-- Centroid legend -->
+  <circle cx="570" cy="205" r="8" fill="#ffffff" stroke="#333" stroke-width="2" />
+  <circle cx="570" cy="205" r="2" fill="#000" />
+  <text x="600" y="209" font-family="Arial, sans-serif" font-size="12">Centroid</text>
+  
+  <!-- Algorithm description -->
+  <rect x="100" y="430" width="600" height="50" fill="white" stroke="#ddd" stroke-width="1" rx="5" ry="5" />
+  <text x="400" y="450" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">
+    K-means iteratively assigns points to the nearest centroid and updates centroids
+  </text>
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">
+    until convergence or maximum iterations are reached.
+  </text>
+</svg>
