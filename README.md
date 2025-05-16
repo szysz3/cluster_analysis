@@ -32,6 +32,7 @@ Cluster analysis playground. Set of algorithms and tools implemented just for fu
 
 ## Clustering workflow
 
+<img src="./clustering_workflow.svg" height="350">
 
 ## Unit tests
 
